@@ -33,7 +33,6 @@ function UpdateDev() {
 
     async function handleUpdateDev(e) {
         e.preventDefault()
-        console.log(techs)
         await api.put('/update', {
             name,
             avatar_url: avatar,
@@ -46,7 +45,7 @@ function UpdateDev() {
                 DevID: id
             }
         })
-
+        localStorage.clear()
         history.push('/')
     }
 
