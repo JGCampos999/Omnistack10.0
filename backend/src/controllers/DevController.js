@@ -21,8 +21,7 @@ module.exports = {
                 type: 'Point',
                 coordinates: [longitude, latitude]
             }
-            var vrfyBio = bio ? 'O usuário não inseriu uma bio' : bio
-
+            var vrfyBio = !bio ? 'O usuário não inseriu uma bio' : bio
             if (!name) {
                 dev = await Dev.create({
                     github_username,
@@ -43,29 +42,6 @@ module.exports = {
                 })
             }
         }
-
-        return response.json(dev)
-    },
-
-    async update(request, response) {
-        const { _id, name, avatar_url, bio, techs, latitude, longitude } = request.body
-
-        const techsArray = parseStringAsArray(techs)
-
-        const location = {
-            type: 'Point',
-            coordinates: [longitude, latitude]
-        }
-
-        const dev = await Dev.updateOne({ _id }, {
-            $set: {
-                name,
-                avatar_url,
-                bio,
-                techs: techsArray,
-                location
-            }
-        })
 
         return response.json(dev)
     },

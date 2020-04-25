@@ -29,7 +29,7 @@ li.dev-item header img {
     color: #333;
 }
 
-.dev-item button {
+.dev-item .deleteButton {
     background: #fff;
     position: absolute;
     right: 5px;
@@ -38,7 +38,16 @@ li.dev-item header img {
     cursor: pointer;
 }
 
-.dev-item button:hover {
+.dev-item .editButton {
+    background: #fff;
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.dev-item .deleteButton :hover, .editButton :hover {
     opacity: 0.8;
 }
 
