@@ -55,3 +55,9 @@
 .updateForm button[type=submit]:hover {
     background: #6931CA;
 }
+
+@media (max-width: 1000px) {
+    .updateForm {
+        width: 80%;
+    }
+}
